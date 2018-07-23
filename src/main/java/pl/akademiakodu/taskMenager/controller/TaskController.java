@@ -30,8 +30,21 @@ public class TaskController {
     @GetMapping("/all")
     public String all(ModelMap modelMap) {
         modelMap.put("tasks", taskDao.findAll());
+        modelMap.put("description", "Lista zadań ");
         return "tasks/all";
     }
 
+    @GetMapping("/allFinished")
+    public String allFinished(ModelMap modelMap) {
+        modelMap.put("tasks", taskDao.findAllFinished());
+        modelMap.put("description", "Lista zadań zakończonych");
+        return "tasks/all";
+    }
 
+    @GetMapping("/allUnFinished")
+    public String allUnFinished(ModelMap modelMap) {
+        modelMap.put("tasks",taskDao.findAllUnfinished());
+        modelMap.put("description", "Lista zadań niezakończonych");
+        return "tasks/all";
+    }
 }

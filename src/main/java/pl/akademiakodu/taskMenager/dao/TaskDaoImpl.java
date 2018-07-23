@@ -33,4 +33,26 @@ public class TaskDaoImpl implements TaskDao{
         Task task = findById(id);
         tasks.remove(task);
     }
+
+    @Override
+    public List<Task> findAllFinished() {
+        List<Task> finiTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isFinished()==true) {
+                finiTasks.add(task);
+            }
+        }
+        return finiTasks;
+    }
+
+    @Override
+    public List<Task> findAllUnfinished() {
+        List<Task> unFiniTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isFinished() == false) {
+                unFiniTasks.add(task);
+            }
+        }
+        return unFiniTasks;
+    }
 }

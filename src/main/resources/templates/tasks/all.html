@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>zadania</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link th:href="@{/assets/css/style.css}" rel="stylesheet"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h1>Lista zadań</h1>
+            <h1 th:text="${description}"/>
         </div>
     </div>
 </div>

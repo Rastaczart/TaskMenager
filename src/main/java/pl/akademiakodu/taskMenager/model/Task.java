@@ -45,4 +45,6 @@ public class Task {
     public void setFinished(boolean finished) {
         isFinished = finished;
     }
+
+
 }
